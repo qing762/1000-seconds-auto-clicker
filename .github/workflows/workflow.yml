@@ -37,13 +37,13 @@ jobs:
       - name: Build executable
         run: |
           echo "__version__ = 'v1.${{ github.run_number }}'" > version.py
-          pyinstaller --onefile --clean --add-data "version.py:." --name "1000 Seconds Auto Clicker v1.${{ github.run_number }}.exe" main.py
+          pyinstaller --onefile --clean --add-data "version.py:." --name "1000.Seconds.Auto.Clicker.v1.${{ github.run_number }}.exe" main.py
 
       - name: Upload Executable
         uses: actions/upload-artifact@v4
         with:
-          name: 1000 Seconds Auto Clicker v1.${{ github.run_number }}
-          path: ./dist/1000 Seconds Auto Clicker v1.${{ github.run_number }}.exe
+          name: 1000.Seconds.Auto.Clicker.v1.${{ github.run_number }}
+          path: ./dist/1000.Seconds.Auto.Clicker.v1.${{ github.run_number }}.exe
 
       - name: Create a new tag
         run: |
@@ -57,7 +57,7 @@ jobs:
         uses: softprops/action-gh-release@v2.0.4
         with:
           files: |
-            ./dist/1000 Seconds Auto Clicker v1.${{ github.run_number }}.exe
+            ./dist/1000.Seconds.Auto.Clicker.v1.${{ github.run_number }}.exe
           name: "Release v1.${{ github.run_number }}"
-          body: "Commit: ${{ github.sha }}\nDownload the `1000 Seconds Auto Clicker v1.${{ github.run_number }}.exe` file or the `source code` and you are good to go!"
+          body: "Commit: ${{ github.sha }}\nDownload the `1000.Seconds.Auto.Clicker.v1.${{ github.run_number }}.exe` file or the `source code` and you are good to go! (apparently Github doesn't allow spacing between file names)"
           tag_name: "v1.${{ github.run_number }}"
