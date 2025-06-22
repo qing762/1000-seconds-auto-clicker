@@ -1,0 +1,8 @@
+
+screenshots/
+version.py
+*.bat
+*.spec
+/build
+/dist
+/lib/__pycache__
